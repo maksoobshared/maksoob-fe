@@ -1,0 +1,15 @@
+{
+  "title": "Official Website",
+  "description": "Official website description in English",
+  "siteName": "Site Name",
+  "locale": "en_US",
+  "author": "Author Name",
+  "keywords": "keywords, english, website",
+  "twitterHandle": "@yourhandle",
+  "twitterCardType": "summary_large_image",
+  "facebookPage": "your-facebook-page-id",
+  "geoCountry": "JO",
+  "geoPlacename": "Amman, Jordan",
+  "ogLocaleAlternate": "ar_JO",
+  "msvalidate": "your-bing-validation-code"
+}

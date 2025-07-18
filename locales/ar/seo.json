@@ -1,0 +1,15 @@
+{
+  "title": "الموقع الرسمي",
+  "description": "وصف الموقع الرسمي باللغة العربية",
+  "siteName": "اسم الموقع",
+  "locale": "ar_JO",
+  "author": "اسم المؤلف",
+  "keywords": "كلمات, مفتاحية, عربية",
+  "twitterHandle": "@yourhandle",
+  "twitterCardType": "summary_large_image",
+  "facebookPage": "your-facebook-page-id",
+  "geoCountry": "JO",
+  "geoPlacename": "عمان ، الأردن",
+  "ogLocaleAlternate": "en_US",
+  "msvalidate": "your-bing-validation-code"
+}
