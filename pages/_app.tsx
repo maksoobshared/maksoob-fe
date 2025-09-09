@@ -8,11 +8,22 @@ import { createSEOConfig } from "@/components/utils/createSEOConfig";
 import { useRouter } from "next/router";
 import { TailwindIndicator } from "@/components/utils/TailwindIndicator";
 import dynamic from "next/dynamic";
-const Toaster = dynamic(() => import("@/components/ui/sonner").then(m => m.Toaster), { ssr: false });
+const Toaster = dynamic(
+  () => import("@/components/ui/sonner").then((m) => m.Toaster),
+  { ssr: false }
+);
 
 // Initialize fonts at module scope (required by next/font)
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const cairo = Cairo({ subsets: ["arabic"], variable: "--font-cairo", display: "swap" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+  display: "swap",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   const { lang, isArabic } = useLang();
@@ -35,7 +46,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...seoConfig} />
-      <div className={`${inter.variable} ${cairo.variable} ${lang === "ar" ? cairo.className : inter.className}`}>
+      <div
+        className={`${inter.variable} ${cairo.variable} ${
+          lang === "ar" ? cairo.className : inter.className
+        }`}
+      >
         <Component {...pageProps} />
         <Toaster />
         <TailwindIndicator />
