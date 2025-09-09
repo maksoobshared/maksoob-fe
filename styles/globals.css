@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* Optional animations: comment out by default for lighter CSS on mobile */
+/* @import "tw-animate-css"; */
 
 @custom-variant dark (&:is(.dark *));
 

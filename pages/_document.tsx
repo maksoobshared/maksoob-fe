@@ -18,9 +18,10 @@ export default function Document(props: DocumentProps) {
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <Html lang={locale} dir={direction}>
+  <Html lang={locale} dir={direction}>
       <Head>
         <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className="antialiased">
         <Main />

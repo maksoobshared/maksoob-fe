@@ -108,11 +108,7 @@ export function createSEOConfig({
         name: "theme-color",
         content: "#fff",
       },
-      {
-        name: "viewport",
-  // Allow user zoom and avoid restrictive maximum-scale/user-scalable flags for accessibility
-  content: "width=device-width, initial-scale=1",
-      },
+  // Viewport is defined once in _document.tsx for consistency and performance
       {
         name: "coverage",
         content: "worldwide",
