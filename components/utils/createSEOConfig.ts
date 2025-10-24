@@ -63,7 +63,7 @@ export function createSEOConfig({
   return {
     title: title || currentSEO.title,
     description: description || currentSEO.description,
-    titleTemplate: `%s - ${currentSEO.siteName}`,
+    titleTemplate: `%s | ${currentSEO.siteName}`,
     defaultTitle: currentSEO.siteName,
   // In non-production environments or when explicitly disabled, prevent indexing
   dangerouslySetAllPagesToNoFollow: disableIndexing,

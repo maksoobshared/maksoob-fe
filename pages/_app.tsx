@@ -2,12 +2,14 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import { useEffect } from "react";
-import { Inter, Cairo } from "next/font/google";
 import useLang from "@/components/hooks/useLang";
 import { createSEOConfig } from "@/components/utils/createSEOConfig";
 import { useRouter } from "next/router";
 import { TailwindIndicator } from "@/components/utils/TailwindIndicator";
 import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+
 const Toaster = dynamic(
   () => import("@/components/ui/sonner").then((m) => m.Toaster),
   { ssr: false }
@@ -19,10 +21,47 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-const cairo = Cairo({
-  subsets: ["arabic"],
-  variable: "--font-cairo",
+
+const madani = localFont({
+  variable: "--font-madani",
   display: "swap",
+  src: [
+    {
+      path: "../fonts/extraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../fonts/light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/semiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/extraBold.ttf",
+      weight: "800",
+      style: "normal",
+    }
+  ]
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -47,8 +86,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <DefaultSeo {...seoConfig} />
       <div
-        className={`${inter.variable} ${cairo.variable} ${
-          lang === "ar" ? cairo.className : inter.className
+        className={`${inter.variable} ${madani.variable} ${
+          lang === "ar" ? madani.className : inter.className
         }`}
       >
         <Component {...pageProps} />
