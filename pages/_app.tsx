@@ -27,37 +27,37 @@ const madani = localFont({
   display: "swap",
   src: [
     {
-      path: "../fonts/extraLight.ttf",
+      path: "../fonts/madani/extraLight.ttf",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../fonts/light.ttf",
+      path: "../fonts/madani/light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../fonts/regular.ttf",
+      path: "../fonts/madani/regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/medium.ttf",
+      path: "../fonts/madani/medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/semiBold.ttf",
+      path: "../fonts/madani/semiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../fonts/bold.ttf",
+      path: "../fonts/madani/bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/extraBold.ttf",
+      path: "../fonts/madani/extraBold.ttf",
       weight: "800",
       style: "normal",
     }
