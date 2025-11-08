@@ -7,8 +7,22 @@ import { createSEOConfig } from "@/components/utils/createSEOConfig";
 import { useRouter } from "next/router";
 import { TailwindIndicator } from "@/components/utils/TailwindIndicator";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import localFont from "next/font/local";
+import { Provider } from "jotai";
+import {
+  setSession,
+  clearSession,
+  hydrateSessionFromStorage,
+  sessionStore,
+} from "@/lib/atoms";
+import {
+  getAccessToken,
+  clearAccessToken,
+  setAccessToken,
+} from "@/components/services/cookies";
+import auth from "@/components/services/auth";
+import axios from "axios";
 
 const Toaster = dynamic(
   () => import("@/components/ui/sonner").then((m) => m.Toaster),
@@ -16,9 +30,9 @@ const Toaster = dynamic(
 );
 
 // Initialize fonts at module scope (required by next/font)
-const inter = Inter({
+const cairo = Cairo({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-cairo",
   display: "swap",
 });
 
@@ -60,8 +74,8 @@ const madani = localFont({
       path: "../fonts/madani/extraBold.ttf",
       weight: "800",
       style: "normal",
-    }
-  ]
+    },
+  ],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -83,17 +97,78 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [isArabic, lang]);
 
   return (
-    <>
+    <Provider store={sessionStore}>
       <DefaultSeo {...seoConfig} />
+      <SessionInitializer />
       <div
-        className={`${inter.variable} ${madani.variable} ${
-          lang === "ar" ? madani.className : inter.className
+        className={`${cairo.variable} ${cairo.variable} ${
+          lang === "ar" ? cairo.className : cairo.className
         }`}
       >
         <Component {...pageProps} />
         <Toaster />
         <TailwindIndicator />
       </div>
-    </>
+    </Provider>
   );
+}
+
+function SessionInitializer() {
+  useEffect(() => {
+    let mounted = true;
+
+    async function init() {
+      const persisted = hydrateSessionFromStorage();
+      const cookieToken = getAccessToken();
+      const token = cookieToken || persisted?.token || null;
+
+      if (!token) {
+        clearSession();
+        return;
+      }
+
+      // Seed session immediately from persisted data if available
+      setSession({
+        token,
+        email: persisted?.email ?? null,
+        name: persisted?.name ?? null,
+        id: persisted?.id ?? null,
+      });
+
+      // ensure cookie persists if only storage had the token
+      if (!cookieToken && typeof window !== "undefined") {
+        try {
+          setAccessToken(token);
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      try {
+        const user = await auth.me();
+        if (!mounted) return;
+        setSession({
+          token,
+          email: (user as any)?.email ?? persisted?.email ?? null,
+          name: (user as any)?.name ?? persisted?.name ?? null,
+          id: (user as any)?.id ?? persisted?.id ?? null,
+        });
+      } catch (e) {
+        // Only clear session for explicit unauthorized responses. Otherwise keep cached session/token.
+        if (axios.isAxiosError(e) && e.response?.status === 401) {
+          try {
+            clearAccessToken();
+          } catch (_) {}
+          clearSession();
+        }
+      }
+    }
+
+    init();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  return null;
 }

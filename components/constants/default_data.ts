@@ -1,1 +1,1 @@
-export const UserDefaultImage = "/images/default-og.jpg";
+export const UserDefaultImage = "/images/default.png";
