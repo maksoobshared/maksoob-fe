@@ -1,11 +1,4 @@
 {
-  "page_title": "Home Page",
-  "hero_title": "Welcome to Our Website",
-  "hero_subtitle": "This is the demo text for the home page",
-  "hero_description": "We provide the best services and solutions for our valued customers. Join us on a journey of success and excellence.",
-  "get_started": "Get Started",
-  "features_title": "Features",
-  "feature_1": "Easy to Use",
-  "feature_2": "Responsive Design",
-  "feature_3": "High Performance"
+  "pageSeoTitle": "Home",
+  "pageSeoDescription": "Welcome to Maksoob, your gateway to quality e-learning and online courses."
 }

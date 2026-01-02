@@ -75,18 +75,18 @@ export async function resetPassword(
 export async function logout(): Promise<MessageResponse> {
   // NOTE: pass token via headers when available
   try {
-    const res = await post<MessageResponse>(`${API_V1}/auth/logout`);
-    // clear local cookie even if API call fails quietly
-    try {
-      clearAccessToken();
-      clearSessionSafely();
-    } catch (e) {}
-    return res;
+    return await post<MessageResponse>(`${API_V1}/auth/logout`);
+  } catch (e) {
+    // Some backends don't implement /logout and may return 404;
+    // we still treat logout as successful client-side.
+    return { message: "Logged out" };
   } finally {
     try {
       clearAccessToken();
       clearSessionSafely();
-    } catch (e) {}
+    } catch (e) {
+      /* ignore */
+    }
   }
 }
 

@@ -1,15 +1,11 @@
 {
-  "title": "الموقع الرسمي",
-  "description": "وصف الموقع الرسمي باللغة العربية",
-  "siteName": "اسم الموقع",
+  "title": "مكسوب",
+  "description": "مكسوب هو منصة رائدة للتعلم الإلكتروني والدورات التدريبية عبر الإنترنت، ويقدم مجموعة واسعة من الموارد التعليمية لمساعدتك في تحقيق أهدافك التعليمية.",
+  "siteName": "مكسوب",
   "locale": "ar_JO",
-  "author": "اسم المؤلف",
-  "keywords": "كلمات, مفتاحية, عربية",
-  "twitterHandle": "@yourhandle",
-  "twitterCardType": "summary_large_image",
-  "facebookPage": "your-facebook-page-id",
+  "author": "فريق مكسوب",
+  "keywords": "التعلم الإلكتروني، الدورات التدريبية عبر الإنترنت، التعليم، منصة التعلم، مكسوب",
   "geoCountry": "JO",
   "geoPlacename": "عمان ، الأردن",
-  "ogLocaleAlternate": "en_US",
-  "msvalidate": "your-bing-validation-code"
+  "ogLocaleAlternate": "en_US"
 }

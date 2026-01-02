@@ -1,0 +1,14 @@
+{
+  "home": "Home",
+  "services": "Services",
+  "myLearning": "My Learning",
+  "courses": "Courses",
+  "aboutUs": "About Us",
+  "searchPlaceholder": "Search",
+  "joinUs": "Join Us",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "goToCourses": "Go to courses",
+  "user": "User",
+  "logout": "Logout"
+}

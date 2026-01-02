@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Globe } from "lucide-react";
+
 import useLang from "@/components/hooks/useLang";
 import {
   Popover,
@@ -44,17 +45,21 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         <button
           type="button"
           className={cn(
-            "inline-flex h-10 w-10 items-center justify-center mr-6 text-[#0055b1] cursor-pointer transition-transform",
+            "inline-flex h-9 w-9 items-center justify-center mr-6 text-secondary cursor-pointer transition-transform",
             className
           )}
           aria-label="Change language"
         >
-          <Globe className="h-8 w-8" />
+          <Globe className="h-6 w-6" />
         </button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-40 p-2 mt-1" dir="ltr">
+      <PopoverContent
+        align="end"
+        className=" w-40 p-2 mt-1 bg-primary border-none"
+        dir="ltr"
+      >
         <div className="flex flex-col gap-1">
-          <div className=" absolute  right-[8px]  top-[-8px]  h-4  w-6  rotate-180  rounded-b-full  bg-white [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+          <div className="hidden lg:block absolute  right-[6px]  top-[-8px]  h-4  w-6  rotate-180  rounded-b-full  bg-primary [clip-path:polygon(0_0,100%_0,50%_100%)]" />
 
           {LANGUAGES.map(({ code, label }) => {
             const isActive = code === lang;
@@ -66,8 +71,8 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
                 className={cn(
                   "w-full rounded-md px-3 py-2 text-sm font-medium transition cursor-pointer",
                   isActive
-                    ? "bg-[#0055b1]/10 text-[#0055b1] cursor-default"
-                    : "hover:bg-[#0055b1]/10 text-foreground"
+                    ? "bg-secondary text-white cursor-default"
+                    : "hover:bg-white/10 text-white"
                 )}
               >
                 {label}
@@ -75,6 +80,7 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             );
           })}
         </div>
+        <div className="block lg:hidden absolute  right-[6px]  bottom-[-8px]  h-4  w-6    rounded-b-full  bg-primary [clip-path:polygon(0_0,100%_0,50%_100%)]" />
       </PopoverContent>
     </Popover>
   );

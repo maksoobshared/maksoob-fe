@@ -1,15 +1,11 @@
 {
-  "title": "Official Website",
-  "description": "Official website description in English",
-  "siteName": "Site Name",
+  "title": "Maksoob",
+  "description": "Maksoob is a leading platform for e-learning and online courses, offering a wide range of educational resources to help you achieve your learning goals.",
+  "siteName": "Maksoob",
   "locale": "en_US",
-  "author": "Author Name",
-  "keywords": "keywords, english, website",
-  "twitterHandle": "@yourhandle",
-  "twitterCardType": "summary_large_image",
-  "facebookPage": "your-facebook-page-id",
+  "author": "Maksoob Team",
+  "keywords": "e-learning, online courses, education, learning platform, Maksoob",
   "geoCountry": "JO",
   "geoPlacename": "Amman, Jordan",
-  "ogLocaleAlternate": "ar_JO",
-  "msvalidate": "your-bing-validation-code"
+  "ogLocaleAlternate": "ar_JO"
 }

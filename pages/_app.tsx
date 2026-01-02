@@ -23,6 +23,8 @@ import {
 } from "@/components/services/cookies";
 import auth from "@/components/services/auth";
 import axios from "axios";
+import { Footer } from "@/components/shared/footer";
+import { Navbar } from "@/components/shared/navbar";
 
 const Toaster = dynamic(
   () => import("@/components/ui/sonner").then((m) => m.Toaster),
@@ -36,42 +38,42 @@ const cairo = Cairo({
   display: "swap",
 });
 
-const madani = localFont({
-  variable: "--font-madani",
+const ARP = localFont({
+  variable: "--font-arp",
   display: "swap",
   src: [
     {
-      path: "../fonts/madani/extraLight.ttf",
+      path: "../fonts/ARP/extralight.ttf",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../fonts/madani/light.ttf",
+      path: "../fonts/ARP/light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../fonts/madani/regular.ttf",
+      path: "../fonts/ARP/base.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/madani/medium.ttf",
+      path: "../fonts/ARP/semibold.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/madani/semiBold.ttf",
+      path: "../fonts/ARP/semibold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../fonts/madani/bold.ttf",
+      path: "../fonts/ARP/bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/madani/extraBold.ttf",
+      path: "../fonts/ARP/bold.ttf",
       weight: "800",
       style: "normal",
     },
@@ -82,6 +84,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const { lang, isArabic } = useLang();
   const router = useRouter();
 
+  const HIDE_CHROME_ROUTES = ["/login", "/register"];
+  const shouldHideChrome = HIDE_CHROME_ROUTES.some(
+    (route) => router.pathname === route
+  );
+
   const seoConfig = createSEOConfig({
     locale: lang,
     canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL,
@@ -91,23 +98,40 @@ export default function App({ Component, pageProps }: AppProps) {
   // Ensure <html dir> and lang update instantly on client when language toggles (no full refresh needed)
   useEffect(() => {
     if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
-      document.documentElement.setAttribute("lang", lang);
+      const htmlElement = document.documentElement;
+      const bodyElement = document.body;
+
+      htmlElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
+      htmlElement.setAttribute("lang", lang);
+
+      const activeFontClass = isArabic ? cairo.className : ARP.className;
+      const activeFontVariable = isArabic
+        ? "var(--font-cairo)"
+        : "var(--font-arp)";
+
+      htmlElement.classList.add(cairo.variable, ARP.variable);
+      [htmlElement, bodyElement].forEach((element) => {
+        element.classList.remove(cairo.className, ARP.className);
+        element.classList.add(activeFontClass);
+        element.style.setProperty("--font-active", activeFontVariable);
+      });
     }
   }, [isArabic, lang]);
 
   return (
     <Provider store={sessionStore}>
+      {!shouldHideChrome && <Navbar />}
       <DefaultSeo {...seoConfig} />
       <SessionInitializer />
       <div
-        className={`${cairo.variable} ${cairo.variable} ${
-          lang === "ar" ? cairo.className : cairo.className
+        className={`${cairo.variable} ${ARP.variable} ${
+          lang === "ar" ? cairo.className : ARP.className
         }`}
       >
         <Component {...pageProps} />
         <Toaster />
         <TailwindIndicator />
+        {!shouldHideChrome && <Footer />}
       </div>
     </Provider>
   );
