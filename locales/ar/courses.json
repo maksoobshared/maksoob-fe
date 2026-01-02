@@ -1,0 +1,36 @@
+{
+  "coursesPageSeoTitle": "Explore Our Courses - Maksoob",
+  "coursesPageSeoDescription": "Discover a wide range of courses at Maksoob to enhance your skills and knowledge. Join us today!",
+
+  "loginRequiredToast": "يجب تسجيل الدخول أولاً",
+  "courseDetailsSeoTitle": "الدورة {{id}} - مكسوب",
+  "courseDetailsSeoDescription": "صفحة تفاصيل الدورة.",
+  "courseDetailsTitle": "تفاصيل الدورة",
+  "courseDetailsId": "رقم الدورة: {{id}}",
+  "loadingCourses": "جارٍ تحميل الدورات",
+  "coursesLoadError": "حدث خطأ. حاول مرة أخرى.",
+  "noCourses": "لا توجد دورات حالياً، حاول مرة أخرى لاحقاً",
+
+  "sortBy": "الترتيب حسب:",
+  "sortMostPopular": "الأكثر شيوعاً",
+  "sortNewest": "الأحدث",
+  "sortPriceLowToHigh": "السعر: من الأقل إلى الأعلى",
+  "sortPriceHighToLow": "السعر: من الأعلى إلى الأقل",
+
+  "category": "التصنيف",
+  "categoryAll": "كل التصنيفات",
+  "categoryEcommerce": "التجارة الإلكترونية",
+  "categoryMarketing": "التسويق",
+  "categoryDesign": "التصميم",
+
+  "software": "البرمجيات",
+  "softwareAll": "كل البرمجيات",
+  "softwareSoftware": "البرمجيات",
+  "softwareTools": "الأدوات",
+  "softwarePlatforms": "المنصات",
+
+  "lesson": "الدروس:",
+  "students": "الطلاب:",
+  "views": "المشاهدات:",
+  "viewDetails": "عرض التفاصيل"
+}

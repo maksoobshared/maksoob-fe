@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ["www.byeq.net"],
+    domains: [
+      "www.byeq.net",
+      "maksoob-dev-bucket.s3.me-central-1.amazonaws.com",
+    ],
   },
 };
 

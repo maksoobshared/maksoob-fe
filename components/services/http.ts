@@ -9,6 +9,14 @@ function getCookie(name: string): string | null {
   return match ? decodeURIComponent(match[2]) : null;
 }
 
+function resolveAcceptLanguage(): "ar" | "en" {
+  if (typeof document === "undefined") return "ar";
+  const lang = (
+    document.documentElement.getAttribute("lang") ?? ""
+  ).toLowerCase();
+  return lang.startsWith("en") ? "en" : "ar";
+}
+
 // Returns auth token from cookies. Assumption: cookie name is 'token'.
 // Change the cookie name below if your project uses a different name (e.g., 'access_token').
 export function getAuthTokenFromCookie(): string | null {
@@ -28,6 +36,11 @@ const instance: AxiosInstance = axios.create({
 // Request interceptor: attach bearer token from cookie when available.
 instance.interceptors.request.use((config) => {
   try {
+    config.headers = {
+      ...(config.headers as Record<string, any>),
+      "Accept-Language": resolveAcceptLanguage(),
+    } as any;
+
     const token = getAccessToken();
     if (token) {
       // preserve existing headers and add Authorization. Cast to any to satisfy axios header typing.

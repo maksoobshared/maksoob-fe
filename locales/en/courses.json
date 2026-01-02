@@ -1,0 +1,36 @@
+{
+  "coursesPageSeoTitle": "Explore Our Courses - Maksoob",
+  "coursesPageSeoDescription": "Discover a wide range of courses at Maksoob to enhance your skills and knowledge. Join us today!",
+
+  "loginRequiredToast": "You need to be logged in",
+  "courseDetailsSeoTitle": "Course {{id}} - Maksoob",
+  "courseDetailsSeoDescription": "Course details page.",
+  "courseDetailsTitle": "Course Details",
+  "courseDetailsId": "Course ID: {{id}}",
+  "loadingCourses": "Loading courses",
+  "coursesLoadError": "Something went wrong. Please try again.",
+  "noCourses": "No courses available, check again later",
+
+  "sortBy": "Sort by:",
+  "sortMostPopular": "Most Popular",
+  "sortNewest": "Newest",
+  "sortPriceLowToHigh": "Price: Low to High",
+  "sortPriceHighToLow": "Price: High to Low",
+
+  "category": "Category",
+  "categoryAll": "All Categories",
+  "categoryEcommerce": "E-commerce",
+  "categoryMarketing": "Marketing",
+  "categoryDesign": "Design",
+
+  "software": "Software",
+  "softwareAll": "All Software",
+  "softwareSoftware": "Software",
+  "softwareTools": "Tools",
+  "softwarePlatforms": "Platforms",
+
+  "lesson": "Lesson:",
+  "students": "Students:",
+  "views": "View:",
+  "viewDetails": "View Details"
+}

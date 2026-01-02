@@ -5,6 +5,10 @@ module.exports = {
     "*": ["common", "footer", "navbar"],
     "/": ["home"],
 
+    // courses
+    "/courses": ["courses"],
+    "/courses/[id]": ["courses"],
+
     // auth
     "/login": ["auth"],
     "/register": ["auth"],
