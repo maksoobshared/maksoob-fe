@@ -1,5 +1,5 @@
 {
-  "coursesPageSeoTitle": "Explore Our Courses - Maksoob",
+  "coursesPageSeoTitle": "Explore Our Courses",
   "coursesPageSeoDescription": "Discover a wide range of courses at Maksoob to enhance your skills and knowledge. Join us today!",
 
   "loginRequiredToast": "يجب تسجيل الدخول أولاً",
@@ -32,5 +32,6 @@
   "lesson": "الدروس:",
   "students": "الطلاب:",
   "views": "المشاهدات:",
-  "viewDetails": "عرض التفاصيل"
+  "viewDetails": "عرض التفاصيل",
+  "continueLearning": "متابعة التعلم"
 }

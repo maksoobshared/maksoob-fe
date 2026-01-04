@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     domains: [
       "www.byeq.net",
       "maksoob-dev-bucket.s3.me-central-1.amazonaws.com",
+      "images.unsplash.com",
     ],
   },
 };

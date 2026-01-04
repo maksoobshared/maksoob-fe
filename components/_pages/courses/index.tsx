@@ -8,6 +8,7 @@ import { CourseFilters } from "./components/courses-filters";
 import { CourseCard } from "./components/course-card";
 import {
   getGuestCourses,
+  getUserCourses,
   type GuestCourse,
 } from "@/components/services/courses";
 import { Spinner } from "@/components/ui/spinner";
@@ -22,6 +23,9 @@ export default function CoursesPage() {
   const [courses, setCourses] = useState<GuestCourse[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [enrolledCourseIds, setEnrolledCourseIds] = useState<Set<number>>(
+    () => new Set()
+  );
 
   const pendingPageRef = React.useRef<number | null>(null);
   const scrollRafRef = React.useRef<number | null>(null);
@@ -83,6 +87,15 @@ export default function CoursesPage() {
     const load = async () => {
       setIsLoading(true);
       try {
+        if (isAuthenticated) {
+          const userCourses = await getUserCourses(100);
+          if (!isCancelled) {
+            setEnrolledCourseIds(new Set(userCourses.map((c) => c.id)));
+          }
+        } else {
+          if (!isCancelled) setEnrolledCourseIds(new Set());
+        }
+
         const data = await getGuestCourses(page);
         if (!isCancelled) setCourses(data);
       } catch (e) {
@@ -97,7 +110,7 @@ export default function CoursesPage() {
     return () => {
       isCancelled = true;
     };
-  }, [page, t]);
+  }, [page, t, isAuthenticated]);
 
   const handleViewDetails = React.useCallback(
     async (id: number) => {
@@ -107,6 +120,18 @@ export default function CoursesPage() {
       }
 
       await router.push(`/courses/${id}`);
+    },
+    [isAuthenticated, router, t]
+  );
+
+  const handleContinueLearning = React.useCallback(
+    async (id: number) => {
+      if (!isAuthenticated) {
+        toast.message(t("loginRequiredToast"));
+        return;
+      }
+
+      await router.push(`/my/courses/${id}`);
     },
     [isAuthenticated, router, t]
   );
@@ -129,7 +154,7 @@ export default function CoursesPage() {
                 {t("noCourses")}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center md:justify-items-start">
                 {courses.map((course) => (
                   <CourseCard
                     key={course.id}
@@ -139,7 +164,9 @@ export default function CoursesPage() {
                     image={course.cover_image?.url ?? "/placeholder.svg"}
                     lessonsCount={course.lessons_count}
                     studentsCount={course.students_count}
+                    isEnrolled={enrolledCourseIds.has(course.id)}
                     onViewDetails={handleViewDetails}
+                    onContinueLearning={handleContinueLearning}
                   />
                 ))}
               </div>

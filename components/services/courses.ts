@@ -38,11 +38,30 @@ export type GuestCoursesResponse = {
   };
 };
 
+export type UserCourse = {
+  id: number;
+};
+
+export type UserCoursesResponse = {
+  body?: {
+    data?: UserCourse[];
+  };
+};
+
 export async function getGuestCourses(
   page: number = 1
 ): Promise<GuestCourse[]> {
   const res = await get<GuestCoursesResponse>(
     `${API_V1}/guest/courses?page=${encodeURIComponent(String(page))}`
+  );
+  return res?.body?.data ?? [];
+}
+
+export async function getUserCourses(
+  perPage: number = 100
+): Promise<UserCourse[]> {
+  const res = await get<UserCoursesResponse>(
+    `${API_V1}/courses?per_page=${encodeURIComponent(String(perPage))}`
   );
   return res?.body?.data ?? [];
 }

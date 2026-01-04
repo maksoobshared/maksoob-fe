@@ -1,9 +1,9 @@
 {
-  "coursesPageSeoTitle": "Explore Our Courses - Maksoob",
+  "coursesPageSeoTitle": "Explore Our Courses",
   "coursesPageSeoDescription": "Discover a wide range of courses at Maksoob to enhance your skills and knowledge. Join us today!",
 
   "loginRequiredToast": "You need to be logged in",
-  "courseDetailsSeoTitle": "Course {{id}} - Maksoob",
+  "courseDetailsSeoTitle": "Course {{id}}",
   "courseDetailsSeoDescription": "Course details page.",
   "courseDetailsTitle": "Course Details",
   "courseDetailsId": "Course ID: {{id}}",
@@ -32,5 +32,6 @@
   "lesson": "Lesson:",
   "students": "Students:",
   "views": "View:",
-  "viewDetails": "View Details"
+  "viewDetails": "View Details",
+  "continueLearning": "Continue Learning"
 }
