@@ -1,4 +1,7 @@
 {
+  "myLearningPageSeoTitle": "دوراتي ",
+  "myLearningPageSeoDescription": "تصفح وأدر دوراتك المسجلة في مكسوب. واصل رحلتك التعليمية معنا.",
+
   "myLearningCoursePageSeoTitle": "تعليمي",
   "myLearningCoursePageSeoDescription": "تصفح وأدر دوراتك المسجلة في مكسوب. واصل رحلتك التعليمية معنا.",
 
@@ -21,5 +24,24 @@
   "lessonInfoMarkAsCompleted": "وضع علامة مكتمل",
 
   "lessonPlayerPdfTitle": "PDF",
-  "lessonPlayerYoutubeTitle": "يوتيوب"
+  "lessonPlayerYoutubeTitle": "يوتيوب",
+
+  "myCoursesHeroKicker": "تعليمي",
+  "myCoursesHeroTitle": "طوّر مهاراتك مع\nدورات احترافية عبر الإنترنت",
+
+  "myCoursesContinueWatchingTitle": "تابع المشاهدة",
+  "myCoursesAllCourses": "كل الدورات",
+  "myCoursesLoadCoursesError": "فشل تحميل الدورات",
+  "myCoursesCourseFallbackTitle": "الدورة {{id}}",
+
+  "myCoursesStatsCoursesEnrolled": "الدورات المسجلة",
+  "myCoursesStatsLessonsCompleted": "الدروس المكتملة",
+  "myCoursesStatsOverallProgress": "التقدم العام",
+  "myCoursesStatsCoursesValue": "{{count}} دورة",
+  "myCoursesStatsLessonsValue": "{{count}} درس",
+
+  "myCoursesJourneyTitle": "رحلة تعلمك",
+  "myCoursesJourneySubtitle": "استمر بنفس الوتيرة! أنت تحقق تقدمًا رائعًا.",
+  "myCoursesJourneyOverallCompletion": "نسبة الإكمال",
+  "myCoursesJourneyCallout": "أنت أنهيت {{percent}}%! استمر — أنت في منتصف الطريق! ركّز على الدروس الحالية للحفاظ على الزخم."
 }

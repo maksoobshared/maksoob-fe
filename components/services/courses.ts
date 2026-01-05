@@ -68,12 +68,68 @@ export type GuestCourseDetailsResponse = {
 
 export type UserCourse = {
   id: number;
+  name?: string;
+  description?: string;
+  duration?: number;
+  status?: {
+    value: string;
+    name: string;
+  };
+  visibility?: {
+    value: string;
+    name: string;
+  };
+  teacher?: {
+    id: number;
+    name: string;
+  };
+  cover_image?: GuestCourseCoverImage | null;
+  students_count?: number;
+  lessons_count?: number;
+  review_notes?: string | null;
+  created_at?: string;
+  category?: {
+    id: number;
+    name: string;
+  };
 };
 
 export type UserCoursesResponse = {
   body?: {
     data?: UserCourse[];
+    pagination?: {
+      current_page?: number;
+      per_page?: number;
+      last_page?: number;
+      total?: number;
+      links?: Array<{
+        url: string | null;
+        label: string;
+        page: number | null;
+        active: boolean;
+      }>;
+      next_page_url?: string | null;
+      prev_page_url?: string | null;
+    };
+    meta?: {
+      enrolled_courses?: number;
+      lesson_completed?: number;
+    };
   };
+};
+
+export type UserCoursesPagination = NonNullable<
+  NonNullable<UserCoursesResponse["body"]>["pagination"]
+>;
+
+export type UserCoursesMeta = NonNullable<
+  NonNullable<UserCoursesResponse["body"]>["meta"]
+>;
+
+export type UserCoursesPage = {
+  data: UserCourse[];
+  pagination?: UserCoursesPagination;
+  meta?: UserCoursesMeta;
 };
 
 export async function getGuestCourses(
@@ -95,12 +151,37 @@ export async function getGuestCourseDetails(
 }
 
 export async function getUserCourses(
-  perPage: number = 100
+  arg: number | { page?: number; perPage?: number } = 100
 ): Promise<UserCourse[]> {
+  const page = typeof arg === "number" ? 1 : arg.page ?? 1;
+  const perPage = typeof arg === "number" ? arg : arg.perPage ?? 100;
+
   const res = await get<UserCoursesResponse>(
-    `${API_V1}/courses?per_page=${encodeURIComponent(String(perPage))}`
+    `${API_V1}/courses?page=${encodeURIComponent(
+      String(page)
+    )}&per_page=${encodeURIComponent(String(perPage))}`
   );
   return res?.body?.data ?? [];
+}
+
+export async function getUserCoursesPage(arg?: {
+  page?: number;
+  perPage?: number;
+}): Promise<UserCoursesPage> {
+  const page = arg?.page ?? 1;
+  const perPage = arg?.perPage ?? 15;
+
+  const res = await get<UserCoursesResponse>(
+    `${API_V1}/courses?page=${encodeURIComponent(
+      String(page)
+    )}&per_page=${encodeURIComponent(String(perPage))}`
+  );
+
+  return {
+    data: res?.body?.data ?? [],
+    pagination: res?.body?.pagination,
+    meta: res?.body?.meta,
+  };
 }
 
 export async function enrollCourse(id: string | number): Promise<unknown> {

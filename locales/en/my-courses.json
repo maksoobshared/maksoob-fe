@@ -1,4 +1,7 @@
 {
+  "myLearningPageSeoTitle": "My Learning",
+  "myLearningPageSeoDescription": "Browse and manage your enrolled courses at Maksoob. Continue your learning journey with us.",
+
   "myLearningCoursePageSeoTitle": "My Learning",
   "myLearningCoursePageSeoDescription": "Browse and manage your enrolled courses at Maksoob. Continue your learning journey with us.",
 
@@ -21,5 +24,24 @@
   "lessonInfoMarkAsCompleted": "Mark as Completed",
 
   "lessonPlayerPdfTitle": "PDF",
-  "lessonPlayerYoutubeTitle": "YouTube"
+  "lessonPlayerYoutubeTitle": "YouTube",
+
+  "myCoursesHeroKicker": "My Learning",
+  "myCoursesHeroTitle": "Sharpen Your Skills With\nProfessional Online Courses",
+
+  "myCoursesContinueWatchingTitle": "Continue watching",
+  "myCoursesAllCourses": "All Courses",
+  "myCoursesLoadCoursesError": "Failed to load courses",
+  "myCoursesCourseFallbackTitle": "Course {{id}}",
+
+  "myCoursesStatsCoursesEnrolled": "Courses Enrolled",
+  "myCoursesStatsLessonsCompleted": "Lessons Completed",
+  "myCoursesStatsOverallProgress": "Overall Progress",
+  "myCoursesStatsCoursesValue": "{{count}} Courses",
+  "myCoursesStatsLessonsValue": "{{count}} Lessons",
+
+  "myCoursesJourneyTitle": "Your Learning Journey",
+  "myCoursesJourneySubtitle": "Keep up the momentum! You're making great progress.",
+  "myCoursesJourneyOverallCompletion": "Overall Completion",
+  "myCoursesJourneyCallout": "You're {{percent}}% done! Keep going—you're halfway there! Focus on the current lessons to maintain momentum."
 }

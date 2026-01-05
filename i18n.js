@@ -15,7 +15,7 @@ module.exports = {
     "/forgot-password": ["auth"],
 
     // my courses
-    "/my/courses": ["my-courses"],
+    "/my/courses": ["my-courses", "courses"],
     "/my/courses/[id]": ["my-courses"],
   },
   loadLocaleFrom: (lang, ns) =>
