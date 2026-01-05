@@ -114,14 +114,9 @@ export default function CoursesPage() {
 
   const handleViewDetails = React.useCallback(
     async (id: number) => {
-      if (!isAuthenticated) {
-        toast.message(t("loginRequiredToast"));
-        return;
-      }
-
       await router.push(`/courses/${id}`);
     },
-    [isAuthenticated, router, t]
+    [router]
   );
 
   const handleContinueLearning = React.useCallback(

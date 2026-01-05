@@ -1,0 +1,25 @@
+{
+  "myLearningCoursePageSeoTitle": "تعليمي",
+  "myLearningCoursePageSeoDescription": "تصفح وأدر دوراتك المسجلة في مكسوب. واصل رحلتك التعليمية معنا.",
+
+  "myCourseDetailsLoading": "جاري تحميل الدورة",
+  "myCourseDetailsNoData": "لا توجد بيانات متاحة",
+  "myCourseDetailsLoadError": "فشل تحميل محتوى الدورة",
+  "myCourseDetailsMarkedCompleted": "تم وضع علامة مكتمل",
+  "myCourseDetailsMarkCompletedError": "تعذر وضع علامة مكتمل للدرس",
+
+  "learningPathTitle": "مسار التعلم",
+  "learningPathSubtitle": "تنقّل بين الدروس وتتبع تقدمك بسهولة.",
+  "learningPathProgress": "تقدم الدورة",
+
+  "lessonTypeVideo": "فيديو",
+  "lessonTypePDF": "PDF",
+
+  "lessonInfoDuration": "المدة: {{duration}}",
+  "lessonInfoCompleted": "مكتمل",
+  "lessonInfoMarking": "جارٍ التحديث...",
+  "lessonInfoMarkAsCompleted": "وضع علامة مكتمل",
+
+  "lessonPlayerPdfTitle": "PDF",
+  "lessonPlayerYoutubeTitle": "يوتيوب"
+}

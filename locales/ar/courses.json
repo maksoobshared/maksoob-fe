@@ -33,5 +33,36 @@
   "students": "الطلاب:",
   "views": "المشاهدات:",
   "viewDetails": "عرض التفاصيل",
-  "continueLearning": "متابعة التعلم"
+  "continueLearning": "متابعة التعلم",
+
+  "courseHeroEnrollNow": "سجّل الآن",
+  "courseHeroInstructorAt": "مدرّس في مكسوب",
+  "courseHeroLearners": "{{count}} متعلم",
+  "courseHeroDurationLabel": "المدة",
+
+  "courseBenefitsTitle": "شاهد هذه الدورة وآلاف الدورات الأخرى",
+  "courseBenefitsItem1": "احصل على وصول غير محدود لكل الدروس",
+  "courseBenefitsItem2": "يقدّمها خبراء في المجال ومحترفون عاملون",
+  "courseBenefitsItem3": "مواضيع حديثة ومطلوبة في السوق",
+
+  "courseLessonsTitle": "دروس هذه الدورة",
+  "courseLessonsCount": "{{count}} درس ({{duration}})",
+  "courseLessonsShowAll": "عرض كل الدروس",
+  "courseLessonsShowLess": "عرض أقل",
+
+  "courseLessonTitle1": "مقدمة",
+  "courseLessonTitle2": "حماية الصف",
+  "courseLessonTitle3": "الأدوات والعناصر",
+  "courseLessonTitle4": "أمازون FBA",
+  "courseLessonTitle5": "البحث عن المنتجات",
+  "courseLessonTitle6": "بحث الموردين",
+  "courseLessonTitle7": "تحسين صفحة المنتج",
+  "courseLessonTitle8": "استراتيجية الإطلاق",
+
+  "enrollSuccessTitle": "تم التسجيل بنجاح",
+  "enrollSuccessDescription": "لقد تم تسجيلك في هذه الدورة.",
+  "enrollSuccessGoToMyCourse": "الذهاب إلى دورتي",
+
+  "courseDetailsLoading": "جارٍ تحميل الدورة",
+  "courseDetailsNoData": "لا توجد بيانات متاحة"
 }

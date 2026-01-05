@@ -1,21 +1,25 @@
-const benefits = [
-  {
-    title: "Get unlimited access to every class",
-  },
-  {
-    title: "Taught by industry leaders & working professionals",
-  },
-  {
-    title: "Topics that are relevant & in-demand",
-  },
-];
+import useTranslation from "next-translate/useTranslation";
 
 const CourseBenefits = () => {
+  const { t } = useTranslation("courses");
+
+  const benefits = [
+    {
+      title: t("courseBenefitsItem1"),
+    },
+    {
+      title: t("courseBenefitsItem2"),
+    },
+    {
+      title: t("courseBenefitsItem3"),
+    },
+  ];
+
   return (
     <section className="bg-[#F0F0F0]  relative z-0 px-4 md:px-10 lg:px-24">
       <div className="container py-8 mx-auto">
         <h2 className="text-lg md:text-xl lg:text-start text-center font-semibold text-secondary mb-6">
-          Watch this class and thousands more
+          {t("courseBenefitsTitle")}
         </h2>
 
         <div className="flex flex-wrap gap-6 md:justify-start">

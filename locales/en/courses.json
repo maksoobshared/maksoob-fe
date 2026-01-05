@@ -33,5 +33,36 @@
   "students": "Students:",
   "views": "View:",
   "viewDetails": "View Details",
-  "continueLearning": "Continue Learning"
+  "continueLearning": "Continue Learning",
+
+  "courseHeroEnrollNow": "Enroll Now",
+  "courseHeroInstructorAt": "Instructor at Maksoob",
+  "courseHeroLearners": "{{count}} Learners",
+  "courseHeroDurationLabel": "Duration",
+
+  "courseBenefitsTitle": "Watch this class and thousands more",
+  "courseBenefitsItem1": "Get unlimited access to every class",
+  "courseBenefitsItem2": "Taught by industry leaders & working professionals",
+  "courseBenefitsItem3": "Topics that are relevant & in-demand",
+
+  "courseLessonsTitle": "Lessons in This Class",
+  "courseLessonsCount": "{{count}} Lessons ({{duration}})",
+  "courseLessonsShowAll": "Show All Lessons",
+  "courseLessonsShowLess": "Show Less",
+
+  "courseLessonTitle1": "Intro",
+  "courseLessonTitle2": "Class Protect",
+  "courseLessonTitle3": "Tools & Elements",
+  "courseLessonTitle4": "Amazon FBA",
+  "courseLessonTitle5": "Finding Products",
+  "courseLessonTitle6": "Supplier Research",
+  "courseLessonTitle7": "Listing Optimization",
+  "courseLessonTitle8": "Launch Strategy",
+
+  "enrollSuccessTitle": "Enrollment successful",
+  "enrollSuccessDescription": "You are now enrolled in this course.",
+  "enrollSuccessGoToMyCourse": "Go to My Course",
+
+  "courseDetailsLoading": "Loading course",
+  "courseDetailsNoData": "No data available"
 }

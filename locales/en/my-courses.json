@@ -1,0 +1,25 @@
+{
+  "myLearningCoursePageSeoTitle": "My Learning",
+  "myLearningCoursePageSeoDescription": "Browse and manage your enrolled courses at Maksoob. Continue your learning journey with us.",
+
+  "myCourseDetailsLoading": "Loading course",
+  "myCourseDetailsNoData": "No data available",
+  "myCourseDetailsLoadError": "Failed to load course content",
+  "myCourseDetailsMarkedCompleted": "Marked as completed",
+  "myCourseDetailsMarkCompletedError": "Could not mark lesson as completed",
+
+  "learningPathTitle": "Your Learning Path",
+  "learningPathSubtitle": "Navigate through your lessons and track your progress easily.",
+  "learningPathProgress": "Course Progress",
+
+  "lessonTypeVideo": "Video",
+  "lessonTypePDF": "PDF",
+
+  "lessonInfoDuration": "Duration: {{duration}}",
+  "lessonInfoCompleted": "Completed",
+  "lessonInfoMarking": "Marking...",
+  "lessonInfoMarkAsCompleted": "Mark as Completed",
+
+  "lessonPlayerPdfTitle": "PDF",
+  "lessonPlayerYoutubeTitle": "YouTube"
+}

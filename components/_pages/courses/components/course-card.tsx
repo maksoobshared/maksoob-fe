@@ -29,7 +29,7 @@ export function CourseCard({
 }: CourseCardProps) {
   const { t } = useTranslation("courses");
   return (
-    <Card className="overflow-hidden border border-border rounded-2xl !p-6 shadow-2xs max-w-[400px] h-full flex flex-col">
+    <Card className="overflow-hidden border border-border rounded-2xl !p-6 shadow-2xs w-full max-w-[400px] h-full flex flex-col">
       {/* Image Section */}
       <div className="relative h-48 rounded-2xl bg-primary overflow-hidden">
         <Image
@@ -52,7 +52,7 @@ export function CourseCard({
 
         <div className="mt-auto">
           {/* Stats */}
-          <div className="flex items-center gap-4 text-[10px] text-muted-foreground mb-4">
+          <div className="flex items-center justify-start gap-4 text-[10px] text-muted-foreground mb-4">
             <span className="flex items-center gap-1 text-black">
               <BookOpen className="h-3.5 w-3.5 text-secondary" />
               {t("lesson")} {lessonsCount ?? 0}
@@ -61,10 +61,10 @@ export function CourseCard({
               <Users className="h-3.5 w-3.5 text-secondary" />
               {t("students")} {studentsCount ?? 0}
             </span>
-            <span className="flex items-center gap-1 text-black">
+            {/* <span className="flex items-center gap-1 text-black">
               <Eye className="h-3.5 w-3.5 text-secondary" />
               {t("views")} 12K
-            </span>
+            </span> */}
           </div>
 
           {/* Footer */}
@@ -74,7 +74,7 @@ export function CourseCard({
               className={
                 isEnrolled
                   ? "font-normal h-10 text-xs w-full"
-                  : "font-normal h-10 text-xs w-[150px]"
+                  : "font-normal h-10 text-xs w-full"
               }
               variant="secondary"
               onClick={() =>

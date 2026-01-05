@@ -13,6 +13,10 @@ module.exports = {
     "/login": ["auth"],
     "/register": ["auth"],
     "/forgot-password": ["auth"],
+
+    // my courses
+    "/my/courses": ["my-courses"],
+    "/my/courses/[id]": ["my-courses"],
   },
   loadLocaleFrom: (lang, ns) =>
     import(`./locales/${lang}/${ns}.json`).then((m) => m.default),

@@ -131,7 +131,15 @@ export default function LoginFormPage({
     (open: boolean) => {
       setIsSuccessOpen(open);
       if (!open) {
-        void router.push("/");
+        const rawRedirect = router.query.redirect;
+        const redirectTo =
+          typeof rawRedirect === "string" &&
+          rawRedirect.startsWith("/") &&
+          !rawRedirect.startsWith("//")
+            ? rawRedirect
+            : "/";
+
+        void router.push(redirectTo);
       }
     },
     [router]

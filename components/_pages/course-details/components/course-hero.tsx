@@ -2,8 +2,45 @@ import Image from "next/image";
 import { Users, BookOpen, ArrowRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import useTranslation from "next-translate/useTranslation";
+import { cn } from "@/lib/utils";
+import useLang from "@/components/hooks/useLang";
 
-const CourseHero = () => {
+type CourseHeroProps = {
+  title?: string;
+  description?: string;
+  teacherName?: string;
+  durationHours?: number;
+  coverImageUrl?: string | null;
+  onEnroll?: () => void;
+  isEnrolling?: boolean;
+};
+
+const CourseHero = ({
+  title = "Amazon FBA course",
+  description = "Step into the world of e-commerce with our Amazon FBA Course, designed to guide you step-by-step from setting up your seller account to managing your store and generating consistent profits. You'll learn how to find winning products, work with suppliers, handle shipping and pricing, and analyze performance to scale your business effectively.",
+  teacherName,
+  durationHours,
+  coverImageUrl,
+  onEnroll,
+  isEnrolling,
+}: CourseHeroProps) => {
+  const { t } = useTranslation("courses");
+  const { isArabic } = useLang();
+
+  const resolvedCoverImageUrl =
+    coverImageUrl?.trim() ||
+    "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop";
+
+  const resolvedTeacherName = teacherName?.trim() || "—";
+  const teacherInitials = resolvedTeacherName
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("")
+    .slice(0, 2);
+
   return (
     <section className="lg:bg-secondary bg-white lg:text-white text-black relative z-30 overflow-visible ">
       <div className="container px-4 md:px-10 lg:px-24 overflow-visible mx-auto lg:mx-0">
@@ -13,7 +50,7 @@ const CourseHero = () => {
             <div className="bg-card rounded-3xl py-4  lg:p-4 overflow-hidden card-shadow w-full max-w-[390px] mx-auto lg:absolute lg:-bottom-8 lg:-end-8 lg:z-40">
               <div className="relative w-full h-[320px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop"
+                  src={resolvedCoverImageUrl}
                   alt="Course preview"
                   fill
                   className="object-cover rounded-3xl"
@@ -22,8 +59,16 @@ const CourseHero = () => {
               </div>
 
               <div className="p-4 flex items-center justify-center">
-                <Button className="w-full font-normal h-12" variant="secondary">
-                  Enroll Now <ArrowRight className="h-4 w-4 ms-2" />
+                <Button
+                  className="w-full font-normal h-12"
+                  variant="secondary"
+                  onClick={onEnroll}
+                  disabled={isEnrolling}
+                >
+                  {t("courseHeroEnrollNow")}{" "}
+                  <ArrowRight
+                    className={cn("h-4 w-4 ms-2", isArabic && "rotate-180")}
+                  />
                 </Button>
               </div>
             </div>
@@ -32,16 +77,11 @@ const CourseHero = () => {
           {/* Left Content */}
           <div className="animate-fade-in order-2 lg:order-1">
             <h1 className="text-2xl text-center lg:text-start md:text-4xl font-bold mb-4">
-              Amazon FBA course
+              {title}
             </h1>
 
             <p className="text-black lg:text-white lg:text-base text-xs mb-6 leading-relaxed max-w-xl">
-              Step into the world of e-commerce with our Amazon FBA Course,
-              designed to guide you step-by-step from setting up your seller
-              account to managing your store and generating consistent profits.
-              You&lsquo;ll learn how to find winning products, work with
-              suppliers, handle shipping and pricing, and analyze performance to
-              scale your business effectively.
+              {description}
             </p>
 
             {/* Rating (placeholder) */}
@@ -61,12 +101,12 @@ const CourseHero = () => {
               <div className="flex items-center gap-3 ">
                 <Avatar className="h-10 w-10 ">
                   <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" />
-                  <AvatarFallback>AK</AvatarFallback>
+                  <AvatarFallback>{teacherInitials || "—"}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-medium text-sm">Alex K</p>
+                  <p className="font-medium text-sm">{resolvedTeacherName}</p>
                   <p className="text-xs text-black lg:text-white">
-                    Instructor at Maksoob
+                    {t("courseHeroInstructorAt")}
                   </p>
                 </div>
               </div>
@@ -74,12 +114,17 @@ const CourseHero = () => {
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
                 <div className="flex items-center gap-2 text-sm bg-[#f0f0f0] md:bg-transparent p-2 md:p-0 rounded-xl md:rounded-none">
                   <Users className="h-4 w-4" />
-                  <span>20,000+ Learners</span>
+                  <span>{t("courseHeroLearners", { count: "20,000+" })}</span>
                 </div>
 
                 <div className="flex items-center gap-2 text-sm bg-[#f0f0f0] md:bg-transparent p-2 md:p-0 rounded-xl md:rounded-none">
                   <BookOpen className="h-4 w-4" />
-                  <span>Lessons 8</span>
+                  <span>
+                    {t("courseHeroDurationLabel")}{" "}
+                    {typeof durationHours === "number"
+                      ? `${durationHours}h`
+                      : "—"}
+                  </span>
                 </div>
               </div>
             </div>
