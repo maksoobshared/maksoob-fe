@@ -133,10 +133,13 @@ export type UserCoursesPage = {
 };
 
 export async function getGuestCourses(
-  page: number = 1
+  page: number = 1,
+  per_page: number = 15
 ): Promise<GuestCourse[]> {
   const res = await get<GuestCoursesResponse>(
-    `${API_V1}/guest/courses?page=${encodeURIComponent(String(page))}`
+    `${API_V1}/guest/courses?page=${encodeURIComponent(
+      String(page)
+    )}&per_page=${encodeURIComponent(String(per_page))}`
   );
   return res?.body?.data ?? [];
 }

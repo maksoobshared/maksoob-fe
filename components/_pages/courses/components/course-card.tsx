@@ -29,7 +29,7 @@ export function CourseCard({
 }: CourseCardProps) {
   const { t } = useTranslation("courses");
   return (
-    <Card className="overflow-hidden border border-border rounded-2xl !p-6 shadow-2xs w-full max-w-[400px] h-full flex flex-col">
+    <Card className="overflow-hidden border border-border rounded-2xl p-3 md:!p-6 shadow-2xs w-full max-w-[400px] h-full flex flex-col">
       {/* Image Section */}
       <div className="relative h-48 rounded-2xl bg-primary overflow-hidden">
         <Image

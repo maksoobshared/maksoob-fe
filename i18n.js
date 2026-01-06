@@ -3,7 +3,7 @@ module.exports = {
   defaultLocale: "ar",
   pages: {
     "*": ["common", "footer", "navbar"],
-    "/": ["home"],
+    "/": ["home", "courses"],
 
     // courses
     "/courses": ["courses"],

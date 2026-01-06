@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
+      "localhost",
+      "127.0.0.1",
+      "37.60.243.151",
       "www.byeq.net",
       "maksoob-dev-bucket.s3.me-central-1.amazonaws.com",
       "images.unsplash.com",

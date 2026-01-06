@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer>
       {/* Main Footer Content */}
-      <div className="bg-secondary">
+      <div className="bg-[#0C3131]">
         <div className="max-w-[1330px] mx-auto px-6 py-[70px]">
           <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-0">
             {/* Left: Logo + Description */}
@@ -145,7 +145,7 @@ export function Footer() {
         <div className="border-t border-primary/30 md:mx-0 !mx-6" />
 
         {/* Copyright */}
-        <div className="bg-secondary py-[50px]">
+        <div className="bg-[#0C3131] py-[50px]">
           <p className="text-center text-white text-xs  px-[60px]">
             {t("copyright", { year })}
           </p>
