@@ -16,8 +16,8 @@ const CourseBenefits = () => {
   ];
 
   return (
-    <section className="bg-[#F0F0F0]  relative z-0 px-4 md:px-10 lg:px-24">
-      <div className="container py-8 mx-auto">
+    <section className="bg-[#F0F0F0] relative z-0 px-4 md:px-10 lg:px-24">
+      <div className="max-w-[1340px] py-8 mx-auto">
         <h2 className="text-lg md:text-xl lg:text-start text-center font-semibold text-secondary mb-6">
           {t("courseBenefitsTitle")}
         </h2>

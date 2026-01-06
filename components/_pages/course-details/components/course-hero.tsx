@@ -43,7 +43,7 @@ const CourseHero = ({
 
   return (
     <section className="lg:bg-secondary bg-white lg:text-white text-black relative z-30 overflow-visible ">
-      <div className="container px-4 md:px-10 lg:px-24 overflow-visible mx-auto lg:mx-0">
+      <div className="container px-4 md:px-10 lg:px-24 overflow-visible mx-auto ">
         <div className="grid lg:grid-cols-2 gap-2 lg:gap-8 items-center overflow-visible">
           {/* Right - Image Card */}
           <div className="animate-scale-in relative lg:min-h-[420px] order-1 lg:order-2">

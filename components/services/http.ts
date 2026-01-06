@@ -36,10 +36,16 @@ const instance: AxiosInstance = axios.create({
 // Request interceptor: attach bearer token from cookie when available.
 instance.interceptors.request.use((config) => {
   try {
-    config.headers = {
+    const nextHeaders = {
       ...(config.headers as Record<string, any>),
-      "Accept-Language": resolveAcceptLanguage(),
-    } as any;
+    } as Record<string, any>;
+
+    // If the caller already set Accept-Language (e.g. SSR), do not overwrite it.
+    if (!nextHeaders["Accept-Language"]) {
+      nextHeaders["Accept-Language"] = resolveAcceptLanguage();
+    }
+
+    config.headers = nextHeaders as any;
 
     const token = getAccessToken();
     if (token) {
