@@ -8,26 +8,26 @@ import onlineDegreeGif from "../assets/online-degree.gif";
 import personWithBg from "../assets/person-with-bg.png";
 import { cn } from "@/lib/utils";
 import { FeaturedCourses } from "./featured-courses";
+import useTranslation from "next-translate/useTranslation";
 
 export function AboutSection() {
+  const { t } = useTranslation("home");
+
   const features = [
     {
       icon: tutorsGif,
-      title: "Professional Tutors",
-      description:
-        "Free & Premium online courses from the world's Join 17 million learners",
+      title: t("homeAboutFeature1Title"),
+      description: t("homeAboutFeature1Description"),
     },
     {
       icon: skillsGif,
-      title: "Learn skills with 120K+",
-      description:
-        "Free & Premium online courses from the world's Join 17 million learners",
+      title: t("homeAboutFeature2Title"),
+      description: t("homeAboutFeature2Description"),
     },
     {
       icon: onlineDegreeGif,
-      title: "Online Degrees",
-      description:
-        "Free & Premium online courses from the world's Join 17 million learners",
+      title: t("homeAboutFeature3Title"),
+      description: t("homeAboutFeature3Description"),
     },
   ];
 
@@ -39,7 +39,7 @@ export function AboutSection() {
           <div className="relative w-[300px] h-[350px] md:w-[350px] md:h-[400px]">
             <Image
               src={personWithBg}
-              alt="Professional tutor"
+              alt={t("homeAboutImageAlt")}
               fill
               priority
               sizes="(max-width: 768px) 300px, 350px"
@@ -49,27 +49,24 @@ export function AboutSection() {
         </div>
 
         {/* Right Side - Content */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-start">
           <Link
             href="/about"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white font-medium cursor-pointer text-[#0C3131] rounded-lg text-sm mb-8"
           >
             <Star className="w-5 h-5" />
-            Get More About Us
+            {t("homeAboutLinkLabel")}
           </Link>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-relaxed ">
-            <span className="text-primary">Over 10 Years</span>{" "}
-            <span className="text-white">
-              in Distant learning for Skill Development
-            </span>
+            <span className="text-primary">
+              {t("homeAboutHeadingHighlight")}
+            </span>{" "}
+            <span className="text-white">{t("homeAboutHeadingRest")}</span>
           </h2>
 
           <p className="text-white text-xs sm:text-sm md:text-lg font-normal leading-relaxed">
-            Compellingly procrastinate equity invested markets with efficient
-            process improvements. actualize mission-critical partnerships with
-            integrated portals. Authoritatively optimize low-risk high-yield
-            metrics and plug-and-play potentialities.
+            {t("homeAboutParagraph")}
           </p>
         </div>
       </div>

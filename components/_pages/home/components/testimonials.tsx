@@ -4,73 +4,75 @@ import teacherImage1 from "../assets/placeholder-person.jpg";
 import teacherImage2 from "../assets/placeholder-person2.jpg";
 import teacherImageLong from "../assets/placeholder-person3.jpg";
 import quotesSvg from "../assets/quotes.svg";
-
-const featuredTestimonials = [
-  {
-    name: "Sara Mohamad",
-    role: "Teacher at Maksoob",
-    image: teacherImageLong,
-    quote:
-      "This platform transformed my podcasting journey with its intuitive tools and outstanding support!",
-    hasVideo: true,
-  },
-  {
-    name: "Jessica M",
-    role: "Teacher at Maksoob",
-    image: teacherImage1,
-    quote: "This platform made podcasting so easy and fun!",
-    hasVideo: false,
-  },
-  {
-    name: "Ryan S",
-    role: "Teacher at Maksoob",
-    image: teacherImage2,
-    quote: "This platform is a game-changer for podcast creators!",
-    hasVideo: false,
-  },
-];
-
-const reviews = [
-  {
-    name: "Sophia L",
-    role: "Student at Maksoob",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    quote:
-      "Listening here is like a creative recharge! It brings valuable insights for my entrepreneurial journey.",
-  },
-  {
-    name: "Alex K",
-    role: "Student at Maksoob",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    quote:
-      "Each episode delivers inspiration and practical tips that help me elevate my marketing approach every day.",
-  },
-  {
-    name: "Sophie Lane",
-    role: "Student at Maksoob",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-    quote:
-      "This podcast has a way of sparking new ideas and motivating me to think creatively.",
-  },
-];
+import useTranslation from "next-translate/useTranslation";
 
 export function Testimonials() {
+  const { t } = useTranslation("home");
+
+  const featuredTestimonials = [
+    {
+      name: t("homeTestimonialsFeatured1Name"),
+      role: t("homeTestimonialsFeatured1Role"),
+      image: teacherImageLong,
+      quote: t("homeTestimonialsFeatured1Quote"),
+      hasVideo: true,
+    },
+    {
+      name: t("homeTestimonialsFeatured2Name"),
+      role: t("homeTestimonialsFeatured2Role"),
+      image: teacherImage1,
+      quote: t("homeTestimonialsFeatured2Quote"),
+      hasVideo: false,
+    },
+    {
+      name: t("homeTestimonialsFeatured3Name"),
+      role: t("homeTestimonialsFeatured3Role"),
+      image: teacherImage2,
+      quote: t("homeTestimonialsFeatured3Quote"),
+      hasVideo: false,
+    },
+  ];
+
+  const reviews = [
+    {
+      name: t("homeTestimonialsReview1Name"),
+      role: t("homeTestimonialsReview1Role"),
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      quote: t("homeTestimonialsReview1Quote"),
+    },
+    {
+      name: t("homeTestimonialsReview2Name"),
+      role: t("homeTestimonialsReview2Role"),
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      quote: t("homeTestimonialsReview2Quote"),
+    },
+    {
+      name: t("homeTestimonialsReview3Name"),
+      role: t("homeTestimonialsReview3Role"),
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      quote: t("homeTestimonialsReview3Quote"),
+    },
+  ];
+
   return (
     <section className="py-16 px-6 md:px-10 lg:px-24 ">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-4">
-          From <span className="text-primary">Our Learner&lsquo;s</span> Hearts
+          {t("homeTestimonialsHeadingPrefix")}{" "}
+          <span className="text-primary">
+            {t("homeTestimonialsHeadingHighlight")}
+          </span>{" "}
+          {t("homeTestimonialsHeadingSuffix")}
         </h2>
         <p className="text-black text-sm sm:text-base md:text-lg">
-          Real stories of growth, passion, and success from learners who turned
-          their goals into reality
+          {t("homeTestimonialsSubtitle")}
         </p>
       </div>
 

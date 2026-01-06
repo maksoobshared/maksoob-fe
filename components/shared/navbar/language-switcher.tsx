@@ -32,6 +32,11 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
       return;
     }
 
+    // Persist locale across refresh (Next.js reads NEXT_LOCALE when i18n is enabled)
+    if (typeof document !== "undefined") {
+      document.cookie = `NEXT_LOCALE=${locale}; Path=/; Max-Age=31536000; SameSite=Lax`;
+    }
+
     const { pathname, query } = router;
 
     router

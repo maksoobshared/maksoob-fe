@@ -54,7 +54,7 @@ export function FeaturedCourses() {
       } catch {
         if (!cancelled) {
           setCourses([]);
-          toast.error(t("myCoursesLoadCoursesError"));
+          toast.error(t("homeFeaturedLoadCoursesError"));
         }
       } finally {
         if (!cancelled) setIsLoading(false);
@@ -82,7 +82,10 @@ export function FeaturedCourses() {
     <div className="mt-10 mb-8">
       <div className="flex items-center justify-between ">
         <h2 className="text-xl text-center sm:text-left  sm:text-2xl md:text-3xl font-medium text-white">
-          Explore <span className="text-primary">Featured Courses</span>
+          {t("homeFeaturedHeadingPrefix")}{" "}
+          <span className="text-primary">
+            {t("homeFeaturedHeadingHighlight")}
+          </span>
         </h2>
         <div className="hidden sm:block">
           <Button
@@ -90,7 +93,7 @@ export function FeaturedCourses() {
             className=" gap-2 text-xs max-[410px]:text-[8px] sm:text-sm bg-transparent font-normal text-white border border-white rounded-xl h-[32px] sm:h-[48px] sm:min-w-[186px]"
             onClick={() => void router.push("/courses")}
           >
-            All Courses
+            {t("homeFeaturedAllCourses")}
             <ArrowRight
               className={cn(
                 "h-4 w-4 hidden sm:block",
@@ -115,7 +118,7 @@ export function FeaturedCourses() {
               id={course.id}
               title={
                 course.name ??
-                t("myCoursesCourseFallbackTitle", { id: course.id })
+                t("homeFeaturedCourseFallbackTitle", { id: course.id })
               }
               description={course.description ?? ""}
               image={course.cover_image?.url ?? ""}
@@ -138,7 +141,7 @@ export function FeaturedCourses() {
               setStartIndex((prev) => Math.max(0, prev - pageSize))
             }
             disabled={!canGoPrev}
-            aria-label="Previous"
+            aria-label={t("homeFeaturedPrevAria")}
           >
             <ChevronLeft className={cn("h-5 w-5", isArabic && "rotate-180")} />
           </Button>
@@ -155,7 +158,7 @@ export function FeaturedCourses() {
               )
             }
             disabled={!canGoNext}
-            aria-label="Next"
+            aria-label={t("homeFeaturedNextAria")}
           >
             <ChevronRight className={cn("h-5 w-5", isArabic && "rotate-180")} />
           </Button>

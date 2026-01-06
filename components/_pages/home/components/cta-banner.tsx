@@ -9,9 +9,11 @@ import { sessionAtom } from "@/lib/atoms";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import useLang from "@/components/hooks/useLang";
+import useTranslation from "next-translate/useTranslation";
 
 export function CtaBanner() {
   const { isArabic } = useLang();
+  const { t } = useTranslation("home");
   const router = useRouter();
   const session = useAtomValue(sessionAtom);
   const isLoggedIn = Boolean(session?.token);
@@ -22,21 +24,21 @@ export function CtaBanner() {
         <div className="bg-[#CCEAEC] rounded-3xl relative overflow-visible px-6 md:px-10 lg:px-24 py-10 md:py-12 lg:pr-[600px] text-center lg:text-start">
           <div className="lg:min-w-[500px]">
             <p className="text-black text-base sm:text-2xl xl:text-3xl font-semibold leading-relaxed pb-4">
-              50% Offer For Very First 100
+              {t("homeCtaLine1")}
             </p>
             <p className="text-black text-base sm:text-2xl xl:text-3xl font-semibold leading-relaxed pb-2">
-              Student’s & Teachers
+              {t("homeCtaLine2")}
             </p>
 
             <div className="mt-6">
               <Button
-                className="h-12 w-full lg:w-auto"
+                className="h-12 w-full"
                 variant="secondary"
                 onClick={() =>
                   void router.push(isLoggedIn ? "/courses" : "/login")
                 }
               >
-                Become a student
+                {t("homeCtaButton")}
                 <ArrowRight
                   className={cn("h-4 w-4", isArabic && "rotate-180")}
                   aria-hidden

@@ -4,6 +4,11 @@ import nextTranslate from "next-translate-plugin";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  i18n: {
+    locales: ["ar", "en"],
+    defaultLocale: "ar",
+    localeDetection: false,
+  },
   images: {
     domains: [
       "localhost",

@@ -288,7 +288,7 @@ export function Navbar() {
               {isAuthenticated && (
                 <button
                   type="button"
-                  className="w-full h-11 rounded-lg bg-destructive text-white font-medium"
+                  className="w-full h-11 rounded-lg cursor-pointer bg-destructive text-white font-medium"
                   onClick={async () => {
                     try {
                       await logout();

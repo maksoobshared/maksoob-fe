@@ -69,10 +69,12 @@ body {
 /* Ensure proper RTL layout */
 html[dir="rtl"] {
   direction: rtl;
+  font-size: calc(100% + 1.5px);
 }
 
 html[dir="ltr"] {
   direction: ltr;
+  font-size: 100%;
 }
 
 @theme inline {
