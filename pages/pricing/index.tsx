@@ -1,18 +1,18 @@
 import useTranslation from "next-translate/useTranslation";
 import PageSeo from "@/components/utils/PageSeo";
-import AboutUsPage from "@/components/_pages/about";
+import PricingPage from "@/components/_pages/pricing";
 
-export default function AboutRoute() {
-  const { t } = useTranslation("about");
+export default function PricingRoute() {
+  const { t } = useTranslation("pricing");
 
   return (
     <main>
       <PageSeo
         title={t("pageSeoTitle")}
         description={t("pageSeoDescription")}
-        canonicalPath="/about"
+        canonicalPath="/pricing"
       />
-      <AboutUsPage />
+      <PricingPage />
     </main>
   );
 }

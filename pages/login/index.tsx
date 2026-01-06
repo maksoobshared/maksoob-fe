@@ -8,13 +8,13 @@ export default function LoginPageRoute() {
   const pageDescription = t("loginPageSeoDescription");
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={pageTitle}
         description={pageDescription}
         canonicalPath="/login"
       />
       <LoginPage />
-    </div>
+    </main>
   );
 }

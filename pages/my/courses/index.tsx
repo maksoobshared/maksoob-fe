@@ -8,13 +8,13 @@ export default function CoursesPageRoute() {
   const pageDescription = t("myLearningPageSeoDescription");
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={pageTitle}
         description={pageDescription}
         canonicalPath="/courses"
       />
       <MyCoursesPage />
-    </div>
+    </main>
   );
 }

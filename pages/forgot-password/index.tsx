@@ -8,13 +8,13 @@ export default function ForgotPasswordPageRoute() {
   const pageDescription = t("forgotPasswordPageSeoDescription");
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={pageTitle}
         description={pageDescription}
         canonicalPath="/forgot-password"
       />
       <HomePage />
-    </div>
+    </main>
   );
 }

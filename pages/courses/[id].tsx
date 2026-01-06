@@ -9,7 +9,7 @@ export default function CourseDetailsRoute() {
   const id = router.query.id;
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={t("courseDetailsSeoTitle", { id: String(id ?? "") })}
         description={t("courseDetailsSeoDescription")}
@@ -17,6 +17,6 @@ export default function CourseDetailsRoute() {
       />
 
       <CourseWatchPage id={typeof id === "string" ? id : ""} />
-    </div>
+    </main>
   );
 }

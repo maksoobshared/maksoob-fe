@@ -8,13 +8,13 @@ export default function RegisterPageRoute() {
   const pageDescription = t("registerPageSeoDescription");
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={pageTitle}
         description={pageDescription}
         canonicalPath="/register"
       />
       <RegisterPage />
-    </div>
+    </main>
   );
 }

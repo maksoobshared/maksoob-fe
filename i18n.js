@@ -3,6 +3,8 @@ module.exports = {
   defaultLocale: "ar",
   pages: {
     "*": ["common", "footer", "navbar"],
+
+    // home
     "/": ["home", "courses"],
 
     // courses
@@ -17,6 +19,12 @@ module.exports = {
     // my courses
     "/my/courses": ["my-courses", "courses"],
     "/my/courses/[id]": ["my-courses"],
+
+    // about
+    "/about": ["about"],
+
+    // pricing
+    "/pricing": ["pricing"],
   },
   loadLocaleFrom: (lang, ns) =>
     import(`./locales/${lang}/${ns}.json`).then((m) => m.default),

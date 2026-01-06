@@ -23,13 +23,13 @@ export default function HomePageRoute({
   const pageDescription = t("pageSeoDescription");
 
   return (
-    <div>
+    <main>
       <PageSeo
         title={pageTitle}
         description={pageDescription}
         canonicalPath="/"
       />
       <HomePage banners={banners} />
-    </div>
+    </main>
   );
 }
